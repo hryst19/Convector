@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCn-qQ-qqa">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Lks-15-aGL">
+            <objects>
+                <tabBarController id="DCn-qQ-qqa" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lX1-Sp-kNb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Lch-DO-XUs" kind="relationship" relationship="viewControllers" id="fCp-py-dQy"/>
+                        <segue destination="ovH-N2-XAx" kind="relationship" relationship="viewControllers" id="gEv-ak-2fe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5G-Bi-Seq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1029" y="-271"/>
+        </scene>
+        <!--Конвертер-->
+        <scene sceneID="e9W-31-JRD">
+            <objects>
+                <viewController id="SNj-Iz-CUa" customClass="ConverterController" customModule="CurrencyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EY3-sa-HeN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vV-aS-WDv">
+                                <rect key="frame" x="20" y="163" width="109" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="BYR"/>
+                                <connections>
+                                    <action selector="pushFromAction:" destination="SNj-Iz-CUa" eventType="touchUpInside" id="SUH-xv-uCc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojG-pY-xnL">
+                                <rect key="frame" x="272" y="163" width="134" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="BYR"/>
+                                <connections>
+                                    <action selector="pushToAction:" destination="SNj-Iz-CUa" eventType="touchUpInside" id="hfK-R4-jCc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lc-vR-9hf">
+                                <rect key="frame" x="20" y="239" width="132" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <action selector="textFromEditingChange:" destination="SNj-Iz-CUa" eventType="editingChanged" id="v6Z-XW-lK3"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rub-fe-Q3L">
+                                <rect key="frame" x="160" y="239" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Курсы за дату:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fh-nQ-Kbu" userLabel="label Courses For Date">
+                                <rect key="frame" x="33.5" y="111" width="347" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fdz-oy-cKY">
+                                <rect key="frame" x="284" y="239" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xHZ-Qg-5af"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Конвертер" id="ADG-bF-NIO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="LabelCoursesForDate" destination="5Fh-nQ-Kbu" id="n9W-Mz-qHT"/>
+                        <outlet property="buttonDone" destination="HBo-42-Zpx" id="X6U-Iu-4eA"/>
+                        <outlet property="buttonFrom" destination="8vV-aS-WDv" id="fVk-VG-kGe"/>
+                        <outlet property="buttonTo" destination="ojG-pY-xnL" id="f0d-Sv-Cuz"/>
+                        <outlet property="textFrom" destination="2lc-vR-9hf" id="B54-0F-enQ"/>
+                        <outlet property="textTo" destination="Fdz-oy-cKY" id="hEj-aF-chT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbp-ns-fGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem style="done" systemItem="done" id="HBo-42-Zpx">
+                    <connections>
+                        <action selector="pushButtonDone:" destination="SNj-Iz-CUa" id="xbm-8O-Ix6"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="772.46376811594212" y="63.616071428571423"/>
+        </scene>
+        <!--Выберите валюту-->
+        <scene sceneID="KYz-TR-J5t">
+            <objects>
+                <tableViewController id="ZUr-ex-c1Q" customClass="SelectCurrencyController" customModule="CurrencyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="59W-xf-XpO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="EWH-Ny-g9y" customClass="SelectedCurrencyCell" customModule="CurrencyCourses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EWH-Ny-g9y" id="ekg-mV-Y5S">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuw-aQ-2M0">
+                                            <rect key="frame" x="20" y="0.0" width="60" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRB-yJ-Oq0">
+                                            <rect key="frame" x="101" y="0.0" width="293" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageFlagSelected" destination="xuw-aQ-2M0" id="awu-QR-uGI"/>
+                                    <outlet property="labelSelectedCurrency" destination="PRB-yJ-Oq0" id="BMe-Ro-5bp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZUr-ex-c1Q" id="svE-F1-5Ld"/>
+                            <outlet property="delegate" destination="ZUr-ex-c1Q" id="w7e-ts-dal"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Выберите валюту" id="6r9-Ju-285">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="1e6-qc-4GO">
+                            <connections>
+                                <action selector="pushCancelAction:" destination="ZUr-ex-c1Q" id="RvX-xL-NRy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZc-Po-ku7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537.68115942029" y="63.616071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Orr-k9-sb6">
+            <objects>
+                <navigationController storyboardIdentifier="selectedCurrencyNSID" id="pxW-y0-nNu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HJH-q1-o14">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZUr-ex-c1Q" kind="relationship" relationship="rootViewController" id="f3h-zj-kDQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzf-Jy-Elt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="64"/>
+        </scene>
+        <!--Выберите дату-->
+        <scene sceneID="BmJ-DE-0DB">
+            <objects>
+                <viewController id="wcH-3S-hTf" customClass="SettingsController" customModule="CurrencyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ylu-hV-DYe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B74-Do-4T2">
+                                <rect key="frame" x="30.5" y="424" width="353" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="Vn6-dO-z3u"/>
+                                    <constraint firstAttribute="height" constant="49" id="s79-5U-N1q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Показать курсы"/>
+                                <connections>
+                                    <action selector="pushShowCourses:" destination="wcH-3S-hTf" eventType="touchUpInside" id="tkf-Vd-20a"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Geg-qJ-wdO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="276" id="l6O-Kw-4eh"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="585308446.06107199">
+                                    <!--2019-07-20 09:40:46 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B74-Do-4T2" firstAttribute="centerX" secondItem="ylu-hV-DYe" secondAttribute="centerX" id="9Di-UO-GHh"/>
+                            <constraint firstItem="Geg-qJ-wdO" firstAttribute="top" secondItem="mT8-G4-CgT" secondAttribute="top" id="D2k-9e-tmA"/>
+                            <constraint firstItem="Geg-qJ-wdO" firstAttribute="trailing" secondItem="mT8-G4-CgT" secondAttribute="trailing" id="D5g-Uf-eVl"/>
+                            <constraint firstItem="B74-Do-4T2" firstAttribute="top" secondItem="Geg-qJ-wdO" secondAttribute="bottom" constant="60" id="mE8-EK-f9q"/>
+                            <constraint firstItem="Geg-qJ-wdO" firstAttribute="leading" secondItem="mT8-G4-CgT" secondAttribute="leading" id="xL3-1v-7II"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mT8-G4-CgT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Выберите дату" id="QAg-tq-UhN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="eIj-L7-e94">
+                            <connections>
+                                <action selector="pushCancelAction:" destination="wcH-3S-hTf" id="zg2-Fp-kB4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="Geg-qJ-wdO" id="ENK-Mr-Xid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ba-P6-z6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598.5507246376815" y="-1047.3214285714284"/>
+        </scene>
+        <!--Курсы-->
+        <scene sceneID="JCN-aM-biN">
+            <objects>
+                <tableViewController id="6p5-dy-KjO" customClass="CoursesController" customModule="CurrencyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pIS-p2-BPe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="4Sz-bh-dFN" customClass="CoursesCell" customModule="CurrencyCourses" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="74"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Sz-bh-dFN" id="wEO-GJ-w5d">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3M-jQ-D1a">
+                                            <rect key="frame" x="20" y="3" width="70" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="g4A-Lm-N3s"/>
+                                                <constraint firstAttribute="height" constant="58" id="p9u-By-9Qi"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Курс" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJs-lT-4UO">
+                                            <rect key="frame" x="286" y="3" width="108" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="108" id="GLA-9C-oUH"/>
+                                                <constraint firstAttribute="height" constant="58" id="l3t-J8-3G6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название валюты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CR-EC-em0">
+                                            <rect key="frame" x="107" y="2" width="171" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="hdb-9k-T7y"/>
+                                                <constraint firstAttribute="width" constant="171" id="iI5-qr-cHU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WJs-lT-4UO" firstAttribute="leading" secondItem="7CR-EC-em0" secondAttribute="trailing" constant="8" id="0cu-pf-7k0"/>
+                                        <constraint firstItem="h3M-jQ-D1a" firstAttribute="top" secondItem="wEO-GJ-w5d" secondAttribute="top" constant="3" id="Hnv-Rm-xvz"/>
+                                        <constraint firstAttribute="trailing" secondItem="WJs-lT-4UO" secondAttribute="trailing" constant="20" id="OU0-nH-pYe"/>
+                                        <constraint firstItem="WJs-lT-4UO" firstAttribute="top" secondItem="wEO-GJ-w5d" secondAttribute="top" constant="3" id="SVn-7U-E3b"/>
+                                        <constraint firstAttribute="bottom" secondItem="h3M-jQ-D1a" secondAttribute="bottom" constant="12.5" id="UiL-aN-897"/>
+                                        <constraint firstAttribute="bottom" secondItem="7CR-EC-em0" secondAttribute="bottom" constant="11.5" id="dgo-eX-IQx"/>
+                                        <constraint firstItem="7CR-EC-em0" firstAttribute="leading" secondItem="h3M-jQ-D1a" secondAttribute="trailing" constant="17" id="fCI-Uu-ONb"/>
+                                        <constraint firstAttribute="bottom" secondItem="WJs-lT-4UO" secondAttribute="bottom" constant="12.5" id="rdm-gw-rX1"/>
+                                        <constraint firstItem="7CR-EC-em0" firstAttribute="top" secondItem="wEO-GJ-w5d" secondAttribute="top" constant="2" id="ubG-Ur-3kG"/>
+                                        <constraint firstItem="h3M-jQ-D1a" firstAttribute="leading" secondItem="wEO-GJ-w5d" secondAttribute="leading" constant="20" id="vY8-bS-R5I"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageFlag" destination="h3M-jQ-D1a" id="7Bl-xo-fQI"/>
+                                    <outlet property="labelCourse" destination="WJs-lT-4UO" id="agU-74-Yye"/>
+                                    <outlet property="labelCurrencyName" destination="7CR-EC-em0" id="QDO-NS-SWU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6p5-dy-KjO" id="jIX-Wc-ZPE"/>
+                            <outlet property="delegate" destination="6p5-dy-KjO" id="IUM-on-jrk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Курсы" id="cCF-OM-aLh">
+                        <barButtonItem key="leftBarButtonItem" title="Настройки" id="bSI-75-7y2">
+                            <connections>
+                                <segue destination="T3R-fG-Mmo" kind="presentation" id="BLD-IR-erw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="86e-Od-UEW">
+                            <connections>
+                                <action selector="pushRefreshAction:" destination="6p5-dy-KjO" id="qys-dQ-0XK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzc-Lu-VAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794.20289855072474" y="-662.27678571428567"/>
+        </scene>
+        <!--Курсы-->
+        <scene sceneID="bfO-AR-LIT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lch-DO-XUs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Курсы" image="tab1" id="IVJ-mt-Y7t">
+                        <color key="badgeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="psB-BT-oah">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6p5-dy-KjO" kind="relationship" relationship="rootViewController" id="QU0-r5-uIe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmV-9b-ICU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115.94202898550725" y="-662.27678571428567"/>
+        </scene>
+        <!--Конвертер-->
+        <scene sceneID="997-IP-nsQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ovH-N2-XAx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Конвертер" image="tab2" id="Iim-Xi-mSZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ucr-2t-uB2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SNj-Iz-CUa" kind="relationship" relationship="rootViewController" id="nlf-7Y-0D3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zn2-Jn-I6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137.68115942028987" y="63.616071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KoZ-wN-lbS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T3R-fG-Mmo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q26-xK-vcZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wcH-3S-hTf" kind="relationship" relationship="rootViewController" id="zVK-xJ-PY1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eb1-Vg-qk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="-1046"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tab1" width="25" height="25"/>
+        <image name="tab2" width="25" height="25"/>
+    </resources>
+</document>
